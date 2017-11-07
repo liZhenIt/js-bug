@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //        练习6：给一组数字数组，将该数组中的数据排序（按照从小到大的规则）
+        var nums = [3,6,2,1,9,0,5];
+        var chang = nums.length;
+        var s = 0;
+        for(i=0;i<=chang;i++)//让每一个数进行交换
+        {
+            for(n=0;n<=chang;n++)//让第一个数循环与下一个数作比较
+            {
+                if(nums[n]<nums[n+1])//如果第一个数小于第二个数
+                {
+                    s=nums[n];//第一个数的值先给一个第三方变量
+                    nums[n]=nums[n+1];//此时第一个数没有值，把第二个数的值给第一个数。
+
+                    nums[n+1]=s;//这时，第二个数为空，把先前存放在第三方的值给第二个数，完成交换
+                }
+            }document.write(nums+'<br>');
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>
