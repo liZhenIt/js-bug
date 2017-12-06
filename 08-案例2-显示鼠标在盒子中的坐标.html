@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            padding: 0;
+            margin: 0;
+            display: block;
+            width: 300px;
+            height: 200px;
+            padding-top: 100px;
+            cursor: pointer;
+            text-align: center;
+            line-height: 50px;
+            background-color: pink;
+            margin: 100px;
+        }
+    </style>
+    <script src="jquery-1.11.1-min.js"></script>
+
+    <script>
+        window.onload = function () {
+            var div = document.getElementsByTagName('div')[0];
+            div.onmousemove = function (event) {
+                var event = event || window.event;
+                var pagex = event.pageX || event.clientX + scroll().left;
+                var divx = div.offsetLeft;
+                var divy = div.offsetTop;
+
+                var pagey = event.pageY || event.clientY + scroll().top;
+                var x = pagex - divx;
+                var y = pagex - divy;
+                div.innerHTML = "鼠标在盒子中的x坐标为: "+x+"px;<br>鼠标在盒子中的y坐标为: "+y+"px;<br>";
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+<div class="box"></div>
+
+</body>
+</html>
